@@ -35,4 +35,11 @@ public class MyBinaryTree {
                 (right != null && right.contains(value)) ||
                 (left != null && left.contains(value));
     }
+
+    public int depth() {
+        return value == null ? 0 : 1 + Math.max(
+            (right == null ? 0 : right.depth()),
+            (left == null ? 0 : left.depth())
+        );
+    }
 }
